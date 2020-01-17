@@ -1,0 +1,6 @@
+<div class="container">
+<input #taskTitle   type="text" class="form-control  m-3" placeholder="Task Title">
+<textarea #taskDes class="form-control m-3" id="" cols="20" rows="10" placeholder="Task Description"></textarea>
+<button class="btn btn-info mr-3" (click)="saveTask(taskTitle , taskDes)">Save</button>
+<a class="btn btn-danger" routerLink="/">Cancel</a>
+</div>

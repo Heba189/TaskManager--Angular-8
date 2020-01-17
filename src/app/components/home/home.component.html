@@ -1,0 +1,28 @@
+<div>
+    <a routerLink="/add-task" class="btn btn-primary m-3">Add New Task</a>
+  </div>
+  
+  <br><br>
+  <div *ngIf ="tasks.length == 0">
+      <p class="alert alert-primary">
+        There is no tasks
+      </p>
+  </div>
+  
+  
+  <div *ngIf ="tasks.length != 0" >
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let task of tasks ; index as i; even as e "  [ngStyle]="{
+                backgroundColor : e ?'#CCC':'#ff'
+            }" > 
+                <a [routerLink]="['/task' , i]">
+                    {{task.title}}
+                    {{task.description}}
+                 </a> 
+                <button class="ml-5 btn btn-outline-danger" (click)="deleteTask(i)">  Delete</button> 
+                
+            </li>
+        </ul>
+  </div>
+
+ 

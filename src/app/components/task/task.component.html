@@ -1,0 +1,19 @@
+<div *ngIf="!taskId">
+    <p class="alert alert-danger">
+        Can't Match Any Id
+    </p>
+</div>
+
+<div *ngIf="taskId" >
+
+    <div class="container">
+        <input   type="text" class="form-control  m-3" placeholder="Task Title"
+         [(ngModel)]="task.title">
+        <textarea  class="form-control m-3" id="" cols="20" rows="10" placeholder="Task Description"
+          [(ngModel)]="task.description" ></textarea>
+        <button class="btn btn-info mr-3" (click)="saveTask()">Save</button>
+        <button class="btn btn-danger" routerLink="/"  (click)=deleteTask() >Delete</button>
+        <a class="btn btn-warning ml-3" routerLink="/">Cancel</a>
+    </div>
+
+</div>
